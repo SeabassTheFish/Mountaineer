@@ -8,7 +8,7 @@ class Menu:
         self.openerStage = 0
         self.width = canvasWidth
         self.height = canvasHeight
-        self.menuButtons = [Button(self.width/4, self.height*4/5, width/10, height/10, "Play", "game"), Button(self.width*3/5, self.height*4/5, width/10, height/10, "Customize", "customize")]
+        self.menuButtons = [Button(self.width/4, self.height*4/5, width/10, height/10, "Play", "play"), Button(self.width*3/5, self.height*4/5, width/10, height/10, "Customize", "customize")]
         self.bigFont = createFont("zx_spectrum-7.ttf", 96)
         self.smallFont = createFont("zx_spectrum-7.ttf", 48)
     

@@ -15,6 +15,10 @@ def mousePressed():
         # Actions
         if globals.action == "customize":
             globals.mode = "customize"
+            globals.modeTime = 0
+        elif globals.action == "play":
+            globals.mode = "play"
+            globals.modeTime = 0
 
     elif globals.mode == "customize":
         globals.action = checkButtons(globals.customize.customizeButtons, pmouseX, pmouseY)
@@ -22,6 +26,7 @@ def mousePressed():
         # Actions
         if globals.action == "menu":
             globals.mode = "menu"
+            globals.modeTime = 0
             globals.player.readSaveFile(globals.player.saveFilename)
         elif globals.action == "toLad":
             globals.player.attributes["gender"] = "m"
@@ -30,6 +35,7 @@ def mousePressed():
         elif globals.action == "saveCustomize":
             globals.player.writeSaveFile()
             globals.mode = "menu"
+            globals.modeTime = 0
 
         if globals.customize.namePlate.xyOver(mouseX, mouseY):
             globals.customize.namePlate.state = "edit"
@@ -53,6 +59,8 @@ def draw():
         globals.menu.run()
     if globals.mode == "customize":
         globals.customize.run()
-    if globals.mode == "game":
+    if globals.mode == "play":
         if globals.level == 0:
-            pass
+            globals.village.run(globals.modeTime)
+            
+    globals.modeTime += 1
