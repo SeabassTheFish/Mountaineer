@@ -1,0 +1,6 @@
+{
+    "name": "Lass",
+    "gender": "f",
+    "facing": "n",
+    "level": 0
+}
