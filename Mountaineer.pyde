@@ -58,7 +58,7 @@ def draw():
     if globals.mode == "menu":
         globals.menu.run()
     if globals.mode == "customize":
-        globals.customize.run()
+        globals.customize.run(globals.modeTime)
     if globals.mode == "play":
         if globals.level == 0:
             globals.village.run(globals.modeTime)

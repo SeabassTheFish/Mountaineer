@@ -12,9 +12,9 @@ class Customize:
         self.canvasHeight = canvasHeight
         self.player = player
         self.customizeButtons = [Button(canvasWidth*9/20, canvasHeight*6/7, canvasWidth/10, canvasHeight/10, "Save\nChanges", "saveCustomize"), Button(canvasWidth*4/5, canvasHeight/3, canvasWidth/10, canvasHeight/5, "", "toLad"), Button(canvasWidth/10, canvasHeight/3, canvasWidth/10, canvasHeight/5, "", "toLass"), Button(canvasWidth/100, canvasHeight/100, canvasWidth/25, canvasHeight/25, "Back", "menu")]
-        self.namePlate = TextBox(self.canvasWidth*2/5, self.canvasHeight*3/4, self.canvasWidth/5, self.canvasHeight/30)
+        self.namePlate = TextBox(self.canvasWidth*2/5, self.canvasHeight*3/4, self.canvasWidth/5, self.canvasHeight/30, self.player.attributes["name"])
         
-    def run(self):
+    def run(self, modeTime):
         self.mountain.display(0, 0, self.canvasWidth, self.canvasHeight)
         fill(255, 0, 0)
         if self.player.attributes["gender"] == "m":
@@ -36,5 +36,5 @@ class Customize:
         self.customizeButtons[0].run()
         fill(255)
         self.customizeButtons[3].run()
-        self.namePlate.display(self.player.attributes["name"])
+        self.namePlate.display(modeTime)
         
