@@ -20,4 +20,3 @@ class Village:
             textAlign(CENTER)
             text("The Village", self.canvasWidth/2, self.canvasHeight/2)
             fill(0, 255 - 2*modeTime)
-            self.testBox.display(modeTime, color(255, 255 - 2*modeTime))
