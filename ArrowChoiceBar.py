@@ -8,8 +8,18 @@ class ArrowChoiceBar:
         self.s = s
         self.e = e
         self.we = we
+        self.north = loadImage("ArrowUp.png")
+        self.south = loadImage("ArrowDown.png")
+        self.west = loadImage("ArrowLeft.png")
+        self.east = loadImage("ArrowRight.png")
         
     def display(self):
         if self.n:
-            image(loadImage("ArrowUp.png"), self.x - self.w/8, self.y - self.h/2, self.w/4, self.h/3)
+            image(self.north, self.x - self.w/8, self.y - self.h/2, self.w/4, self.h/3)
+        if self.s:
+            image(self.south, self.x - self.w/8, self.y, self.w/4, self.h/3)
+        if self.we:
+            image(self.west, self.x - self.w/4, self.y - self.h/4, self.w/4, self.h/3)
+        if self.e:
+            image(self.east, self.x, self.y - self.h/4, self.w/4, self.h/3)
             

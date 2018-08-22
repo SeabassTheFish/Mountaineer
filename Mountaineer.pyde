@@ -62,6 +62,4 @@ def draw():
     if globals.mode == "play":
         if globals.level == 0:
             globals.village.run(globals.modeTime)
-    
-    globals.testArrows.display()
     globals.modeTime += 1

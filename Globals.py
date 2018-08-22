@@ -17,4 +17,4 @@ class Globals:
         self.level = self.player.attributes["level"]
         self.village = Village(canvasWidth, canvasHeight)
         self.modeTime = 0
-        self.testArrows = ArrowChoiceBar(canvasWidth*2/3, canvasHeight*2/3, canvasWidth/6, canvasHeight/6, True, False, False, False)
+        self.testArrows = ArrowChoiceBar(canvasWidth*2/3, canvasHeight*2/3, canvasWidth/6, canvasHeight/6, True, True, True, True)
