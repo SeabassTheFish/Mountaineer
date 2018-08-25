@@ -52,6 +52,10 @@ def keyReleased():
             globals.customize.namePlate.txt = globals.customize.namePlate.txt[:-1]
         elif globals.customize.namePlate.state == "edit" and keyCode >= 32 and keyCode <= 126:
             globals.customize.namePlate.txt = globals.customize.namePlate.txt + str(key)
+    elif globals.mode == "play":
+        if globals.level == 0:
+            if keyCode == 38:
+                globals.level = 1
 
 def draw():
     background(255, 255, 255)
