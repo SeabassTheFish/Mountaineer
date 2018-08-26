@@ -8,7 +8,7 @@ from Village import *
 
 class Globals:
     def __init__(self, canvasWidth, canvasHeight):
-        self.mode = "play"
+        self.mode = "menu"
         self.player = Player()
         self.menu = Menu(canvasWidth, canvasHeight)
         self.customize = Customize(canvasWidth, canvasHeight, self.player)

@@ -1,1 +1,1 @@
-{"gender": "m", "level": 0, "facing": "n", "name": "Seabass"}
+{"gender": "f", "level": 0, "facing": "n", "name": "Lass"}
