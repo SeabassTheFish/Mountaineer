@@ -43,7 +43,7 @@ def mousePressed():
             
     globals.action = ""
     
-def keyReleased():
+def keyPressed():
     if globals.mode == "customize":
         if keyCode == 10:
             globals.player.attributes["name"] = globals.customize.namePlate.txt
@@ -56,6 +56,7 @@ def keyReleased():
         if globals.level == 0:
             if keyCode == 38:
                 globals.level = 1
+                globals.modeTime = 0
 
 def draw():
     background(255, 255, 255)
@@ -65,5 +66,7 @@ def draw():
         globals.customize.run(globals.modeTime)
     if globals.mode == "play":
         if globals.level == 0:
+            globals.village.leadUp(globals.modeTime)
+        elif globals.level == 1:
             globals.village.run(globals.modeTime)
     globals.modeTime += 1
