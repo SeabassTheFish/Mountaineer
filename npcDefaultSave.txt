@@ -1,0 +1,10 @@
+{
+    "facing": "n",
+    "view": "o",
+    "x": -10,
+    "y": -10,
+    "w": 1,
+    "h": 1,
+    "state": "still",
+    "speed": 5
+}

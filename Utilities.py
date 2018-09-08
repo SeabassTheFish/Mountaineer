@@ -7,3 +7,6 @@ def checkButtons(buttonList, x, y):
             btn.showClicked()
             return btn.actionTo
     return ""
+
+def intToRGB(input):
+    return color(input >> 16 & 255, input >> 8 & 255, input & 255, input >> 24 & 255)

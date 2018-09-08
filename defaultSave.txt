@@ -2,5 +2,12 @@
     "name": "Lass",
     "gender": "f",
     "facing": "n",
-    "level": 0
+    "level": 0,
+    "view": "o",
+    "x": -10,
+    "y": -10,
+    "w": 1,
+    "h": 1,
+    "state": "still",
+    "speed": 5
 }
