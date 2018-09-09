@@ -15,7 +15,7 @@ class Customize:
         self.namePlate = TextBox(self.canvasWidth*2/5, self.canvasHeight*3/4, self.canvasWidth/5, self.canvasHeight/30, self.player.attributes["name"])
         
     def run(self, modeTime):
-        self.mountain.display(0, 0, self.canvasWidth, self.canvasHeight)
+        self.mountain.display(self.canvasWidth/2, self.canvasHeight/2, self.canvasWidth, self.canvasHeight)
         fill(255, 0, 0)
         if self.player.attributes["gender"] == "m":
             stroke(255)
@@ -30,8 +30,8 @@ class Customize:
         self.customizeButtons[2].run()
         stroke(0)
         strokeWeight(1)
-        self.lad.display(self.canvasWidth*4/5, self.canvasHeight/3, self.canvasWidth/10, self.canvasHeight/5)
-        self.lass.display(self.canvasWidth/10, self.canvasHeight/3, self.canvasWidth/10, self.canvasHeight/5)
+        self.lad.display(self.canvasWidth*4/5 + self.canvasWidth/20, self.canvasHeight/3 + self.canvasHeight/10, self.canvasWidth/10, self.canvasHeight/5)
+        self.lass.display(self.canvasWidth/10 + self.canvasWidth/20, self.canvasHeight/3 + self.canvasHeight/10, self.canvasWidth/10, self.canvasHeight/5)
         fill(255)
         self.customizeButtons[0].run()
         fill(255)

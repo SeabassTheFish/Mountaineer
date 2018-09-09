@@ -11,4 +11,4 @@ class Animation:
             
     def display(self, x, y, w, h):
         self.frame = (self.frame + 1) % (self.imageCount * self.delay)
-        image(self.images[floor(self.frame / self.delay)], x, y, w, h)
+        image(self.images[floor(self.frame / self.delay)], x - w/2, y - h/2, w, h)

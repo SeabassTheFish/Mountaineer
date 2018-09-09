@@ -10,6 +10,7 @@ def setup():
     globals.player.readSaveFile("saveData.txt")
     
 def mousePressed():
+    println(get(mouseX, mouseY))
     if globals.mode == "menu":
         globals.action = checkButtons(globals.menu.menuButtons, pmouseX, pmouseY)
         

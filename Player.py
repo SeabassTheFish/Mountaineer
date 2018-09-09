@@ -68,22 +68,22 @@ class Player:
             
     def findNextPxl(self):
         if self.attributes["facing"] == "n":
-            nextPxl = get(self.attributes["x"] + self.attributes["w"]/2, self.attributes["y"] + self.attributes["h"]/3)
+            nextPxl = get(self.attributes["x"], self.attributes["y"] - 10)
             fill(255, 0, 0)
-            #ellipse(self.attributes["x"] + self.attributes["w"]/2, self.attributes["y"] + self.attributes["h"]/3, 10, 10)
+            #ellipse(self.attributes["x"], self.attributes["y"] - 10, 10, 10)
             return intToRGB(nextPxl)
         if self.attributes["facing"] == "s":
-            nextPxl = get(self.attributes["x"] + self.attributes["w"]/2, self.attributes["y"] + self.attributes["h"]*2/3)
+            nextPxl = get(self.attributes["x"], self.attributes["y"] + 10)
             fill(255, 0, 0)
-            #ellipse(self.attributes["x"] + self.attributes["w"]/2, self.attributes["y"] + self.attributes["h"]*2/3, 10, 10)
+            #ellipse(self.attributes["x"], self.attributes["y"] + 10, 10, 10)
             return intToRGB(nextPxl)
         if self.attributes["facing"] == "w":
-            nextPxl = get(self.attributes["x"] + self.attributes["w"]/3, self.attributes["y"] + self.attributes["h"]/2)
+            nextPxl = get(self.attributes["x"] - 10, self.attributes["y"])
             fill(255, 0, 0)
-            #ellipse(self.attributes["x"] + self.attributes["w"]/3, self.attributes["y"] + self.attributes["h"]/2, 10, 10)
+            #ellipse(self.attributes["x"] - 10, self.attributes["y"], 10, 10)
             return intToRGB(nextPxl)
         if self.attributes["facing"] == "e":
-            nextPxl = get(self.attributes["x"] + self.attributes["w"]*2/3, self.attributes["y"] + self.attributes["h"]/2)
+            nextPxl = get(self.attributes["x"] + 10, self.attributes["y"])
             fill(255, 0, 0)
-            #ellipse(self.attributes["x"] + self.attributes["w"]*2/3, self.attributes["y"] + self.attributes["h"]/2, 10, 10)
+            #ellipse(self.attributes["x"] + 10, self.attributes["y"], 10, 10)
             return intToRGB(nextPxl)

@@ -1,1 +1,1 @@
-{"gender": "m", "level": 0, "h": 100, "facing": "n", "view": "o", "w": 100, "name": "Seabass", "x": 500, "y": 500, "state": "still", "speed": 5}
+{"gender": "m", "level": 0, "h": 100, "facing": "n", "speed": 5, "view": "o", "w": 100, "name": "Seabass", "x": 500, "y": 500, "state": "still"}

@@ -13,7 +13,7 @@ class Menu:
         self.smallFont = createFont("zx_spectrum-7.ttf", 48)
     
     def run(self):
-        self.mountain.display(0, 0, self.width, self.height)
+        self.mountain.display(self.width/2, self.height/2, self.width, self.height)
         if self.openerStage == 0:
             if 4*(frameCount) < 256:
                 fill(0, 0, 0, 255 - (frameCount)*4)
