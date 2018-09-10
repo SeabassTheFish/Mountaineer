@@ -46,7 +46,7 @@ class NPC:
             self.nextMove -= 1
         if self.moveLeft > 0:
             self.move()
-            if self.nextPixel == intToRGB(-1973791):
+            if self.nextPixel == intToRGB(-1973791) or self.nextPixel == int:
                 if self.attributes["facing"] == "n":
                     self.attributes["y"] += self.attributes["speed"] + 1
                 if self.attributes["facing"] == "s":
@@ -55,6 +55,7 @@ class NPC:
                     self.attributes["x"] -= self.attributes["speed"] + 1
                 if self.attributes["facing"] == "w":
                     self.attributes["x"] += self.attributes["speed"] + 1
+                self.moveLeft = 0
         
     def display(self):
         self.displayImage.display(self.attributes["x"], self.attributes["y"], self.attributes["w"], self.attributes["h"])
