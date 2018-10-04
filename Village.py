@@ -30,7 +30,7 @@ class Village:
         self.enterArrows.display()
         self.player.attributes["view"] = "o"
         self.player.attributes["facing"] = "n"
-        self.player.attributes["x"] = self.canvasWidth/2
+        self.player.attributes["x"] = self.canvasWidth
         self.player.attributes["y"] = self.canvasHeight*7/8
         self.player.attributes["w"] = self.canvasWidth/10
         self.player.attributes["h"] = self.canvasHeight/10

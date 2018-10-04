@@ -10,7 +10,7 @@ def setup():
     globals.player.readSaveFile("saveData.txt")
     
 def mousePressed():
-    println(get(mouseX, mouseY))
+    #println(get(mouseX, mouseY))
     if globals.mode == "menu":
         globals.action = checkButtons(globals.menu.menuButtons, pmouseX, pmouseY)
         
@@ -90,4 +90,5 @@ def draw():
             globals.village.leadUp(globals.modeTime)
         elif globals.level == 1:
             globals.village.run(globals.modeTime, globals.screen)
+            limCoords(globals.player, 0, width, 0, height)
     globals.modeTime += 1

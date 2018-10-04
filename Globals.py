@@ -9,8 +9,8 @@ from ArrowChoiceBar import *
 
 class Globals:
     def __init__(self, canvasWidth, canvasHeight):
-        self.mode = "play"
-        self.screen = "apothecary"
+        self.mode = "menu"
+        self.screen = ""
         self.player = Player()
         self.menu = Menu(canvasWidth, canvasHeight)
         self.customize = Customize(canvasWidth, canvasHeight, self.player)

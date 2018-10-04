@@ -64,7 +64,6 @@ class Player:
                 self.attributes["x"] -= self.attributes["speed"] + 1
             if self.attributes["facing"] == "w":
                 self.attributes["x"] += self.attributes["speed"] + 1
-        
             
     def findNextPxl(self):
         if self.attributes["facing"] == "n":

@@ -46,7 +46,7 @@ class NPC:
             self.nextMove -= 1
         if self.moveLeft > 0:
             self.move()
-            if self.nextPixel == intToRGB(-1973791) or self.nextPixel == int:
+            if self.nextPixel == intToRGB(-3815995):
                 if self.attributes["facing"] == "n":
                     self.attributes["y"] += self.attributes["speed"] + 1
                 if self.attributes["facing"] == "s":
@@ -92,20 +92,20 @@ class NPC:
         if self.attributes["facing"] == "n":
             nextPxl = get(self.attributes["x"], self.attributes["y"] - 10)
             fill(255, 0, 0)
-            ellipse(self.attributes["x"], self.attributes["y"] - 10, 10, 10)
+            #ellipse(self.attributes["x"], self.attributes["y"] - 10, 10, 10)
             return intToRGB(nextPxl)
         if self.attributes["facing"] == "s":
             nextPxl = get(self.attributes["x"], self.attributes["y"] + 10)
             fill(255, 0, 0)
-            ellipse(self.attributes["x"], self.attributes["y"] + 10, 10, 10)
+            #ellipse(self.attributes["x"], self.attributes["y"] + 10, 10, 10)
             return intToRGB(nextPxl)
         if self.attributes["facing"] == "w":
             nextPxl = get(self.attributes["x"] - 10, self.attributes["y"])
             fill(255, 0, 0)
-            ellipse(self.attributes["x"] - 10, self.attributes["y"], 10, 10)
+            #ellipse(self.attributes["x"] - 10, self.attributes["y"], 10, 10)
             return intToRGB(nextPxl)
         if self.attributes["facing"] == "e":
             nextPxl = get(self.attributes["x"] + 10, self.attributes["y"])
             fill(255, 0, 0)
-            ellipse(self.attributes["x"] + 10, self.attributes["y"], 10, 10)
+            #ellipse(self.attributes["x"] + 10, self.attributes["y"], 10, 10)
             return intToRGB(nextPxl)
