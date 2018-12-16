@@ -8,7 +8,12 @@ class TriggerPlate:
         self.entity = entity
         
     def over(self):
-        return entity.x > self.x and entity.x < self.x + self.w and entity.y > self.y and entity.y < self.y + self.h
+        return self.entity.attributes["x"] > self.x and self.entity.attributes["x"] < self.x + self.w and self.entity.attributes["y"] > self.y and self.entity.attributes["y"] < self.y + self.h
         
     def run(self):
         rect(self.x, self.y, self.w, self.h)
+        if self.over():
+            return True
+        else:
+            return False
+            

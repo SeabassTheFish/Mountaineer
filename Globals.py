@@ -6,6 +6,8 @@ from Customize import *
 from Levels import *
 from Village import *
 from ArrowChoiceBar import *
+import json
+from Utilities import *
 
 class Globals:
     def __init__(self, canvasWidth, canvasHeight):

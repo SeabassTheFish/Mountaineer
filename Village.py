@@ -3,6 +3,7 @@ from Readout import *
 from ArrowChoiceBar import *
 from Board import *
 from NPC import *
+from TriggerPlate import *
 
 class Village:
     def __init__(self, canvasWidth, canvasHeight, player):
@@ -15,6 +16,8 @@ class Village:
         self.enterArrows = ArrowChoiceBar(canvasWidth*19/20, canvasHeight*19/20, canvasWidth/5, canvasHeight/5, True, False, False, False)
         self.board = Board(canvasWidth, canvasHeight, "Village", 2, 2, 1)
         self.pharmacist = NPC("cody")
+        self.testPlate = TriggerPlate(1500, 450, 100, 50, "apothe", self.player)
+        self.villagePlates = [self.testPlate]
         
     def leadUp(self, modeTime):
         self.pic.display(self.canvasWidth/2, self.canvasHeight/2, self.canvasWidth, self.canvasHeight)

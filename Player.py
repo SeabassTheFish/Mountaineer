@@ -14,13 +14,13 @@ class Player:
         except:
             self.readSaveFile(self.defaultsFilename)
         self.updateImage()
-    
+            
     def readSaveFile(self, filename):
         file = open(filename, "r")
         saveData = " ".join(file.readlines())
         self.attributes = json.loads(saveData)
         file.close()
-            
+    
     def writeSaveFile(self):
         newSaveFile = open(self.saveFilename, "w")
         newSaveFile.write(json.dumps(self.attributes))

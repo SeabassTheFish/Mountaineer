@@ -10,40 +10,8 @@ def setup():
     globals.player.readSaveFile("saveData.txt")
     
 def mousePressed():
-    #println(get(mouseX, mouseY))
-    if globals.mode == "menu":
-        globals.action = checkButtons(globals.menu.menuButtons, pmouseX, pmouseY)
-        
-        # Actions
-        if globals.action == "customize":
-            globals.mode = "customize"
-            globals.modeTime = 0
-        elif globals.action == "play":
-            globals.mode = "play"
-            globals.modeTime = 0
-
-    elif globals.mode == "customize":
-        globals.action = checkButtons(globals.customize.customizeButtons, pmouseX, pmouseY)
-        
-        # Actions
-        if globals.action == "menu":
-            globals.mode = "menu"
-            globals.modeTime = 0
-            globals.player.readSaveFile(globals.player.saveFilename)
-        elif globals.action == "toLad":
-            globals.player.attributes["gender"] = "m"
-        elif globals.action == "toLass":
-            globals.player.attributes["gender"] = "f"
-        elif globals.action == "saveCustomize":
-            globals.player.writeSaveFile()
-            globals.mode = "menu"
-            globals.modeTime = 0
-
-        if globals.customize.namePlate.xyOver(mouseX, mouseY):
-            globals.customize.namePlate.state = "edit"
-        
-            
-    globals.action = ""
+    println(str(mouseX) + ", " + str(mouseY))
+    doActions(globals)
     
 def keyPressed():
     if globals.mode == "customize":
@@ -75,6 +43,7 @@ def keyPressed():
                 
 def keyReleased():
     globals.player.attributes["state"] = "still"
+    doActions(globals)
     globals.player.updateImage()
     globals.previousKey = keyCode
     globals.pressTime = 0
