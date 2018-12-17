@@ -11,6 +11,8 @@ class TriggerPlate:
         return self.entity.attributes["x"] > self.x and self.entity.attributes["x"] < self.x + self.w and self.entity.attributes["y"] > self.y and self.entity.attributes["y"] < self.y + self.h
         
     def run(self):
+        noFill()
+        noStroke()
         rect(self.x, self.y, self.w, self.h)
         if self.over():
             return True

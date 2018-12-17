@@ -33,4 +33,3 @@ class Board:
     def display(self):
         background(0, 100, 0)
         image(self.images[self.currentImage], 0, 0, self.canvasWidth, self.canvasHeight)
-            

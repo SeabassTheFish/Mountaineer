@@ -55,7 +55,7 @@ class Player:
             if keycode == 40:
                 self.attributes["facing"] = "s"
                 self.attributes["y"] += self.attributes["speed"]
-        if self.nextPixel == color(0, 0, 0) or self.nextPixel == color(-1973791):
+        if self.nextPixel == color(0, 0, 0) or self.nextPixel == color(-1973791) or self.nextPixel == color(-4342339):
             if self.attributes["facing"] == "n":
                 self.attributes["y"] += self.attributes["speed"] + 1
             if self.attributes["facing"] == "s":

@@ -62,14 +62,20 @@ def doActions(dataSet):
     elif dataSet.mode == "play":
         
         if dataSet.level == 0:
-            pass
+            if dataSet.action == "initVillage":
+                dataSet.level = 1
+                dataSet.screen = "village"
+                dataSet.modeTime = 0
         elif dataSet.level == 1:
             dataSet.action = checkPlates(dataSet.village.villagePlates, dataSet.player)
             if dataSet.action == "apothe":
-                dataSet.mode = "apothecary"
+                dataSet.screen = "apothecary"
                 dataSet.modeTime = 0
+            elif dataSet.action == "talkToApothe":
+                dataSet.popup = "talkToApothe"
             elif dataSet.action == "yeet":
                 println("YEET")
         
-            
+    if dataSet.action != "":
+        println(dataSet.action)
     dataSet.action = ""

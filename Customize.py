@@ -6,8 +6,8 @@ from TextBox import *
 class Customize:
     def __init__(self, canvasWidth, canvasHeight, player):
         self.mountain = Animation("Mountain", 2, 15)
-        self.lad = Animation("Lad-LU", 2, 10)
-        self.lass = Animation("Lass-RU", 2, 10)
+        self.lad = Animation("m-LU", 2, 10)
+        self.lass = Animation("f-RU", 2, 10)
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight
         self.player = player

@@ -4,6 +4,7 @@ from ArrowChoiceBar import *
 from Board import *
 from NPC import *
 from TriggerPlate import *
+from Popup import *
 
 class Village:
     def __init__(self, canvasWidth, canvasHeight, player):
@@ -16,8 +17,10 @@ class Village:
         self.enterArrows = ArrowChoiceBar(canvasWidth*19/20, canvasHeight*19/20, canvasWidth/5, canvasHeight/5, True, False, False, False)
         self.board = Board(canvasWidth, canvasHeight, "Village", 2, 2, 1)
         self.pharmacist = NPC("cody")
-        self.testPlate = TriggerPlate(1500, 450, 100, 50, "apothe", self.player)
-        self.villagePlates = [self.testPlate]
+        self.apothePlate = TriggerPlate(canvasWidth*4/5 - canvasWidth/50, canvasHeight*2/5, canvasWidth/20, canvasHeight/20, "apothe", self.player)
+        self.talkToApothePlate = TriggerPlate(self.canvasWidth/2 - self.canvasWidth/40, self.canvasHeight/2 + self.canvasHeight/10, self.canvasWidth/20, self.canvasHeight/20, "talkToApothe", self.player)
+        self.villagePlates = [self.apothePlate, self.talkToApothePlate]
+        self.apothePopup = Popup("apotheTrade.txt", player, canvasWidth, canvasHeight)
         
     def leadUp(self, modeTime):
         self.pic.display(self.canvasWidth/2, self.canvasHeight/2, self.canvasWidth, self.canvasHeight)
@@ -33,17 +36,17 @@ class Village:
         self.enterArrows.display()
         self.player.attributes["view"] = "o"
         self.player.attributes["facing"] = "n"
-        self.player.attributes["x"] = self.canvasWidth
+        self.player.attributes["x"] = self.canvasWidth/2
         self.player.attributes["y"] = self.canvasHeight*7/8
         self.player.attributes["w"] = self.canvasWidth/10
         self.player.attributes["h"] = self.canvasHeight/10
         self.player.attributes["state"] = "still"
         
-    def run(self, modeTime, screen):
+    def run(self, modeTime, screen, popup):
         self.board.run()
-        self.player.run()
         if screen == "village":
-            self.board = Board(self.canvasWidth, self.canvasHeight, "Village", 2, 2, 1)
+            if modeTime < 3:
+                self.board = Board(self.canvasWidth, self.canvasHeight, "Village", 2, 2, 1)
         if screen == "apothecary":
             if modeTime < 3:
                 self.player.attributes["x"] = self.canvasWidth/2
@@ -58,5 +61,11 @@ class Village:
                 self.pharmacist.attributes["speed"] = 10
                 self.pharmacist.attributes["facing"] = "s"
                 self.pharmacist.updateImage()
-            self.board = Board(self.canvasWidth, self.canvasHeight, "Apothecary", 1, 1, 0)
+                self.board = Board(self.canvasWidth, self.canvasHeight, "Apothecary", 1, 1, 0)
+            fill(255)
+            noStroke()
+            rect(self.canvasWidth/2 - self.canvasWidth/40, self.canvasHeight/2 + self.canvasHeight/10, self.canvasWidth/20, self.canvasHeight/20, 5)
             self.pharmacist.run()
+        self.player.run()
+        if popup == "talkToApothe":
+                self.apothePopup.run()
