@@ -13,7 +13,7 @@ class ArrowChoiceBar:
         self.west = loadImage("ArrowLeft.png")
         self.east = loadImage("ArrowRight.png")
         
-    def display(self):
+    def display(self): # Displays what arrow keys the user can press to do something
         if self.n:
             image(self.north, self.x - self.w/8, self.y - self.h/2, self.w/4, self.h/3)
         if self.s:

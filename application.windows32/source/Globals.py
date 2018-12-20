@@ -6,16 +6,21 @@ from Customize import *
 from Levels import *
 from Village import *
 from ArrowChoiceBar import *
+import json
+from Utilities import *
 
-class Globals:
+class Globals: # The master variable object. Globals are bad, so I just put all the global things I would need into one global
     def __init__(self, canvasWidth, canvasHeight):
         self.mode = "play"
-        self.player = Player()
+        self.screen = ""
+        self.player = Player(canvasWidth, canvasHeight)
         self.menu = Menu(canvasWidth, canvasHeight)
         self.customize = Customize(canvasWidth, canvasHeight, self.player)
         self.action = ""
-        self.level = self.player.attributes["level"]
+        self.level = 0
         self.village = Village(canvasWidth, canvasHeight, self.player)
+        self.village.board = Board(canvasWidth, canvasHeight, "Village", 2, 2, 1)
         self.modeTime = 0
-        self.testArrows = ArrowChoiceBar(canvasWidth*2/3, canvasHeight*2/3, canvasWidth/6, canvasHeight/6, True, True, True, True)
         self.previousKey = 0
+        self.pressTime = 0
+        self.popup = ""

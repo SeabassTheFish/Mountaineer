@@ -1,11 +1,11 @@
-class Button:
+class Button: # Incredibly useful and versatile
     def __init__(self, x, y, w, h, txt, actionTo):
         self.x = x
         self.y = y
         self.w = w
         self.h = h
         self.txt = txt
-        self.shadowSize = 10
+        self.shadowSize = 10 # To give it that nice "click" effect
         self.actionTo = actionTo
         
     def display(self):
@@ -20,7 +20,7 @@ class Button:
         
     def run(self):
         self.display()
-        if self.xyOver(mouseX, mouseY):
+        if self.xyOver(mouseX, mouseY): # A clever thing by my dad. My main checks for mouseClicked anyway, so it checks all the buttons only when that happens.
             self.shadowSize = 5
         else:
             self.shadowSize = 10

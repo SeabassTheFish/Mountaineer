@@ -5,10 +5,10 @@ class Animation:
         self.images = []
         self.delay = delay
         
-        for i in range(self.imageCount):
+        for i in range(self.imageCount): # Grabbing all the frames
             filename = str(imagePrefix) + "-" + str(i + 1) + ".png"
             self.images.append(loadImage(filename))
             
-    def display(self, x, y, w, h):
+    def display(self, x, y, w, h): # Running each frame in quick succession
         self.frame = (self.frame + 1) % (self.imageCount * self.delay)
-        image(self.images[floor(self.frame / self.delay)], x, y, w, h)
+        image(self.images[floor(self.frame / self.delay)], x - w/2, y - h/2, w, h)
