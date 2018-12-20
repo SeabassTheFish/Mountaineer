@@ -1,9 +1,10 @@
 import json
 from Animation import *
 from Utilities import *
+from Popup import *
 
-class Player:
-    def __init__(self):
+class Player: # This looks a lot like the NPC
+    def __init__(self, canvasWidth, canvasHeight):
         self.saveFilename = "saveData.txt"
         self.defaultsFilename = "defaultSave.txt"
         self.displayImage = ""
@@ -14,6 +15,7 @@ class Player:
         except:
             self.readSaveFile(self.defaultsFilename)
         self.updateImage()
+        self.inventoryPopup = Popup("inventory.txt", self, canvasWidth, canvasHeight)
             
     def readSaveFile(self, filename):
         file = open(filename, "r")

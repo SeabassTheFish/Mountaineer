@@ -1,4 +1,4 @@
-class TextBox:
+class TextBox: # An interactive text box the user can use
     def __init__(self, x, y, w, h, txt):
         self.x = x;
         self.y = y
@@ -25,5 +25,5 @@ class TextBox:
             else:
                 text(self.txt, self.x, self.y)
 
-    def xyOver(self, x, y):
+    def xyOver(self, x, y): # Like a button, the user can only type in it when clicked
         return x > self.x and x < self.x + self.w and y > self.y and y < self.y + self.h

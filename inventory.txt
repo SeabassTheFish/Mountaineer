@@ -1,0 +1,1 @@
+{"main": "t", "inventory": "s", "readout": "m", "character": "s"}

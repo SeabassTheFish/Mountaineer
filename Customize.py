@@ -3,7 +3,9 @@ from Button import *
 from Player import *
 from TextBox import *
 
-class Customize:
+# TODO: Image generator so images don't have to be premade, makes a lot of choices available
+
+class Customize: # The customize menu screen
     def __init__(self, canvasWidth, canvasHeight, player):
         self.mountain = Animation("Mountain", 2, 15)
         self.lad = Animation("m-LU", 2, 10)

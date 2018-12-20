@@ -1,4 +1,4 @@
-class TriggerPlate:
+class TriggerPlate: # Triggered when the player is standing on top of it
     def __init__(self, x, y, w, h, action, entity):
         self.x = x
         self.y = y

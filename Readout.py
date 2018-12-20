@@ -1,4 +1,4 @@
-class Readout:
+class Readout: # Succinct little script for a typing readout at the bottom of the screen
     def __init__(self, x, y, w, h, txt):
         self.x = x
         self.y = y

@@ -1,1 +1,1 @@
-{"gender": "m", "level": 0, "h": 100, "facing": "n", "speed": 5, "view": "o", "w": 100, "name": "Seabass", "x": 500, "y": 500, "state": "still"}
+{"gender": "m", "level": 0, "h": 100, "facing": "n", "speed": 5, "view": "o", "w": 100, "name": "Seabass", "x": 0, "y": 0, "state": "still", "health": 100, "xp": 0, "armor": 0, "magic": {"Offense": 0, "Defense": 0, "Mental": 0, "Physical": 0}, "physical": {"Power": 0, "Agility": 0, "Physique": 0}, "mental": {"Smarts": 0, "Cunning": 0, "Wit": 0}}
